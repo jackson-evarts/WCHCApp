@@ -10,9 +10,9 @@ import Foundation
 
 // Custom Color Scheme (Matching WCHC Logo)
 extension Color {
-    static let lightRed = Color(red: 189 / 255, green: 52 / 255, blue: 60 / 255)
-    static let darkPurple = Color(red: 99 / 255, green: 56 / 255, blue: 75 / 255)
-    static let beige = Color(red: 239 / 255, green: 201 / 255, blue: 180 / 255)
+    static let lightRed = Color(red: 187 / 255, green: 32 / 255, blue: 39 / 255)
+    static let darkPurple = Color(red: 91 / 255, green: 39 / 255, blue: 56 / 255)
+    static let beige = Color(red: 231 / 255, green: 192 / 255, blue: 158 / 255)
 }
 
 
