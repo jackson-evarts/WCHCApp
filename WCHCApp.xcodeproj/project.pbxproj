@@ -13,6 +13,7 @@
 		A3748D532CB75F4000C27CCA /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A3748D522CB75F4000C27CCA /* Preview Assets.xcassets */; };
 		A3748D5A2CB75FE000C27CCA /* Poppins in Resources */ = {isa = PBXBuildFile; fileRef = A3748D592CB75FE000C27CCA /* Poppins */; };
 		A3748D5C2CB760C900C27CCA /* ContentViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3748D5B2CB760C900C27CCA /* ContentViewLogic.swift */; };
+		A3748D602CB7679900C27CCA /* RadioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3748D5F2CB7679900C27CCA /* RadioPlayerView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -23,6 +24,7 @@
 		A3748D522CB75F4000C27CCA /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		A3748D592CB75FE000C27CCA /* Poppins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Poppins; sourceTree = "<group>"; };
 		A3748D5B2CB760C900C27CCA /* ContentViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewLogic.swift; sourceTree = "<group>"; };
+		A3748D5F2CB7679900C27CCA /* RadioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -55,11 +57,12 @@
 		A3748D4A2CB75F3E00C27CCA /* WCHCApp */ = {
 			isa = PBXGroup;
 			children = (
-				A3748D592CB75FE000C27CCA /* Poppins */,
 				A3748D4B2CB75F3E00C27CCA /* WCHCAppApp.swift */,
+				A3748D5F2CB7679900C27CCA /* RadioPlayerView.swift */,
 				A3748D4D2CB75F3E00C27CCA /* ContentView.swift */,
 				A3748D5B2CB760C900C27CCA /* ContentViewLogic.swift */,
 				A3748D4F2CB75F4000C27CCA /* Assets.xcassets */,
+				A3748D592CB75FE000C27CCA /* Poppins */,
 				A3748D512CB75F4000C27CCA /* Preview Content */,
 			);
 			path = WCHCApp;
@@ -147,6 +150,7 @@
 				A3748D4E2CB75F3E00C27CCA /* ContentView.swift in Sources */,
 				A3748D4C2CB75F3E00C27CCA /* WCHCAppApp.swift in Sources */,
 				A3748D5C2CB760C900C27CCA /* ContentViewLogic.swift in Sources */,
+				A3748D602CB7679900C27CCA /* RadioPlayerView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
