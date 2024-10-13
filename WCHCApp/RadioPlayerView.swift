@@ -40,6 +40,15 @@ struct RadioPlayerView: View {
                     .padding()
                     .foregroundStyle(Color.beige)
 
+                ZStack{
+                    Image("Base") // Refer to the image by its name in the assets
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                    Image("Record")
+                        .resizable()
+                        .aspectRatio(contentMode: .fit)
+                }
+                
             } // Close VStack
             .onAppear {
                 // Setup AVPlayer when the view appears
