@@ -40,14 +40,31 @@ struct ContentView: View {
 
                 // Main app content
                 VStack {
+                    Spacer()
+                    
                     Image("LongLogo") // Refer to the image by its name in the assets
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                     
                     NavigationLink(destination: RadioPlayerView()) {
                         
-                        Text("Listen to WCHC 88.1")
+                        Text("Listen Live")
                             .font(.custom("Futura", size: 30))
+                            .foregroundColor(.beige)
+                            .padding()
+                            .background(
+                                RoundedRectangle(cornerRadius: 10)
+                                    .fill(Color.darkPurple)
+                                    .frame(height: 50)
+                            )
+                        
+                    }
+                    
+                    Spacer()
+                    
+                    NavigationLink(destination: LearnMoreView()) {
+                        Text("Learn More About WCHC 88.1")
+                            .font(.custom("Futura", size: 20))
                             .foregroundColor(.beige)
                             .padding()
                             .background(

@@ -14,6 +14,7 @@
 		A3748D5A2CB75FE000C27CCA /* Poppins in Resources */ = {isa = PBXBuildFile; fileRef = A3748D592CB75FE000C27CCA /* Poppins */; };
 		A3748D5C2CB760C900C27CCA /* ContentViewLogic.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3748D5B2CB760C900C27CCA /* ContentViewLogic.swift */; };
 		A3748D602CB7679900C27CCA /* RadioPlayerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A3748D5F2CB7679900C27CCA /* RadioPlayerView.swift */; };
+		A39ECC962CBD87A5001FB95E /* LearnMoreView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A39ECC952CBD87A5001FB95E /* LearnMoreView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -25,6 +26,7 @@
 		A3748D592CB75FE000C27CCA /* Poppins */ = {isa = PBXFileReference; lastKnownFileType = folder; path = Poppins; sourceTree = "<group>"; };
 		A3748D5B2CB760C900C27CCA /* ContentViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewLogic.swift; sourceTree = "<group>"; };
 		A3748D5F2CB7679900C27CCA /* RadioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerView.swift; sourceTree = "<group>"; };
+		A39ECC952CBD87A5001FB95E /* LearnMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnMoreView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +62,7 @@
 				A3748D4B2CB75F3E00C27CCA /* WCHCAppApp.swift */,
 				A3748D5F2CB7679900C27CCA /* RadioPlayerView.swift */,
 				A3748D4D2CB75F3E00C27CCA /* ContentView.swift */,
+				A39ECC952CBD87A5001FB95E /* LearnMoreView.swift */,
 				A3748D5B2CB760C900C27CCA /* ContentViewLogic.swift */,
 				A3748D4F2CB75F4000C27CCA /* Assets.xcassets */,
 				A3748D592CB75FE000C27CCA /* Poppins */,
@@ -147,6 +150,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				A39ECC962CBD87A5001FB95E /* LearnMoreView.swift in Sources */,
 				A3748D4E2CB75F3E00C27CCA /* ContentView.swift in Sources */,
 				A3748D4C2CB75F3E00C27CCA /* WCHCAppApp.swift in Sources */,
 				A3748D5C2CB760C900C27CCA /* ContentViewLogic.swift in Sources */,

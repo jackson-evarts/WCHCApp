@@ -59,13 +59,18 @@ struct RadioPlayerView: View {
                         self.isPlaying.toggle() // Changes isPlaying to false if true, and true if false
                         
                     }) {
-                        Image("Record") // The record
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                            .rotationEffect(.degrees(rotationAngle)) // Rotate based on the rotationAngle state
-                            .animation(isPlaying ? Animation.linear(duration: rotationSpeed).repeatForever(autoreverses: false) : Animation.easeIn(duration: rotationSpeed), value: rotationAngle) // Spin when playing, stop when paused
-                        
+                        ZStack{
+                            Image("Record") // The record
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                                .rotationEffect(.degrees(rotationAngle)) // Rotate based on the rotationAngle state
+                                .animation(isPlaying ? Animation.linear(duration: rotationSpeed).repeatForever(autoreverses: false) : Animation.easeIn(duration: rotationSpeed), value: rotationAngle) // Spin when playing, stop when paused
+                            Image("Pin")
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                        }
                     }
+                    
                     
                 } // Close Record animation ZStack
                 
