@@ -13,7 +13,8 @@ struct RadioPlayerView: View {
     @State private var isPlaying = false
     @State private var rotationAngle: Double = 0 // Track the current rotation angle
     @State private var rotationSpeed: Double = 0 // Speed for the rotation animation
-
+    @State private var isSpinning = false
+    
     var body: some View {
         ZStack {
             // Background color
@@ -53,7 +54,6 @@ struct RadioPlayerView: View {
                         }
                         self.isPlaying.toggle()
                         
-                        // TODO: Make this button toggle and untoggle audio
                     }) {
                         Image("Record")
                             .resizable()
@@ -82,6 +82,7 @@ struct RadioPlayerView: View {
     // Functions:
     func playRadio() {
         self.player?.play()
+        
     }
 
     func startSpinning() {
