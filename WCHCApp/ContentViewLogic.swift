@@ -1,9 +1,10 @@
-//
-//  ContentViewLogic.swift
-//  WCHCApp
-//
-//  Created by Jackson Evarts on 10/9/24.
-//
+/*
+ 
+ ContentViewLogic.swift
+ Author: Jackson Evarts
+ DOB: Oct 9, 2024
+
+*/
 
 import SwiftUI
 import Foundation

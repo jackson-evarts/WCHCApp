@@ -27,6 +27,7 @@
 		A3748D5B2CB760C900C27CCA /* ContentViewLogic.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentViewLogic.swift; sourceTree = "<group>"; };
 		A3748D5F2CB7679900C27CCA /* RadioPlayerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RadioPlayerView.swift; sourceTree = "<group>"; };
 		A39ECC952CBD87A5001FB95E /* LearnMoreView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LearnMoreView.swift; sourceTree = "<group>"; };
+		A39ECC972CBD8948001FB95E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,6 +60,7 @@
 		A3748D4A2CB75F3E00C27CCA /* WCHCApp */ = {
 			isa = PBXGroup;
 			children = (
+				A39ECC972CBD8948001FB95E /* Info.plist */,
 				A3748D4B2CB75F3E00C27CCA /* WCHCAppApp.swift */,
 				A3748D5F2CB7679900C27CCA /* RadioPlayerView.swift */,
 				A3748D4D2CB75F3E00C27CCA /* ContentView.swift */,
@@ -291,6 +293,7 @@
 				DEVELOPMENT_TEAM = P6M5J7435U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WCHCApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -320,6 +323,7 @@
 				DEVELOPMENT_TEAM = P6M5J7435U;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WCHCApp/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

@@ -1,9 +1,10 @@
-//
-//  RadioPlayerView.swift
-//  WCHCApp
-//
-//  Created by Jackson Evarts on 10/9/24.
-//
+/*
+ 
+ RadioPlayerView.swift
+ Author: Jackson Evarts
+ DOB: Oct 9, 2024
+
+*/
 
 import SwiftUI
 import AVFoundation
@@ -23,7 +24,9 @@ struct RadioPlayerView: View {
             Color.darkPurple.ignoresSafeArea()
 
             VStack {
-                /*
+                
+                Spacer()
+                
                 // Play/Pause button
                 Button(action: {
                     if self.isPlaying {
@@ -41,6 +44,13 @@ struct RadioPlayerView: View {
                         .foregroundStyle(Color.beige)
                 }
                 .padding()
+                 
+                
+                // Status Text
+                /*
+                 Text(isPlaying ? "Click on the Record to Pause" : "Click on the Record to Play")
+                 .font(.custom("Futura", size: 20))
+                 .foregroundStyle(Color.beige)
                  */
 
                 // Record image with spinning effect
@@ -74,21 +84,41 @@ struct RadioPlayerView: View {
                     
                 } // Close Record animation ZStack
                 
-                // Instructions text - TODO: Do this or do the play pause button?? Decide with Ross.
-                Text(isPlaying ? "Click on the Record to Pause" : "Click on the Record to Play")
-                    .font(.custom("Futura", size: 20))
-                    .foregroundStyle(Color.beige)
                 
+                /*
                 // Status text
                 Text(isPlaying ? "Playing" : "Paused")
-                    .font(.custom("Futura", size: 50))
-                    .padding()
+                    .font(.custom("Futura", size: 32))
                     .foregroundStyle(Color.beige)
+                 */
+                
+                Spacer()
+                Button(action: {
+                    refreshPlayer()
+                }) {
+                    Text("Click Here to Refresh Player")
+                        .font(.custom("Futura", size: 20))
+                        .foregroundStyle(Color.beige)
+                }
             }
             .onAppear {
                 // Setup AVPlayer when the view appears
-                let url = URL(string: "https://s2.radio.co/sc161fe4c9/listen")!
-                self.player = AVPlayer(url: url)
+                setupPlayer()
+                
+                // Configure audio session for background playback
+                configureAudioSession()
+                
+                // Making it so radio is playing immediately upon entering view
+                //refreshPlayer()
+                // TODO: Uncomment this so the default state is PLAY
+
+            
+            }
+            .onDisappear {
+                // Pause the player and stop the spinning when the view disappears
+                self.player?.pause()
+                stopSpinning()
+                self.isPlaying = false
             }
         }
     }
@@ -113,6 +143,37 @@ struct RadioPlayerView: View {
         timer?.invalidate()
         timer = nil
     }
+    
+    // Function to configure the audio session for background playback
+    func configureAudioSession() {
+        do {
+            try AVAudioSession.sharedInstance().setCategory(.playback, mode: .default)
+            try AVAudioSession.sharedInstance().setActive(true)
+        } catch {
+            print("Failed to set up AVAudioSession for background playback: \(error)")
+        }
+    }
+    
+    // Setup the player function
+    func setupPlayer() {
+        let url = URL(string: "https://s2.radio.co/sc161fe4c9/listen")!
+        self.player = AVPlayer(url: url)
+    }
+    
+    // Function to reconfigure the player
+    func refreshPlayer() {
+        // Stop the current player and spinning
+        self.player?.pause()
+        stopSpinning()
+        self.isPlaying = false
+        
+        // Create a new player to refresh the stream and start it
+        setupPlayer()
+        playRadio()
+        startSpinning()
+        self.isPlaying = true
+    }
+    
 }
 
 #Preview {

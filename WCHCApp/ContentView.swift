@@ -49,7 +49,7 @@ struct ContentView: View {
                     NavigationLink(destination: RadioPlayerView()) {
                         
                         Text("Listen Live")
-                            .font(.custom("Futura", size: 30))
+                            .font(.custom("Futura", size: 32))
                             .foregroundColor(.beige)
                             .padding()
                             .background(
@@ -63,7 +63,7 @@ struct ContentView: View {
                     Spacer()
                     
                     NavigationLink(destination: LearnMoreView()) {
-                        Text("Learn More About WCHC 88.1")
+                        Text("Learn More")
                             .font(.custom("Futura", size: 20))
                             .foregroundColor(.beige)
                             .padding()
