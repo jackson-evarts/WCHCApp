@@ -37,8 +37,7 @@ struct ContentView: View {
                         }
                     }
                 }
-                
-                
+
                 // Main app content
                 VStack {
                     Image("LongLogo") // Refer to the image by its name in the assets

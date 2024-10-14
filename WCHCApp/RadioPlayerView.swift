@@ -14,6 +14,8 @@ struct RadioPlayerView: View {
     @State private var rotationAngle: Double = 0 // Track the current rotation angle
     @State private var rotationSpeed: Double = 0 // Speed for the rotation animation
     @State private var isSpinning = false
+    @State private var timer: Timer? // Timer for continuous spinning
+
     
     var body: some View {
         ZStack {
@@ -21,6 +23,7 @@ struct RadioPlayerView: View {
             Color.darkPurple.ignoresSafeArea()
 
             VStack {
+                /*
                 // Play/Pause button
                 Button(action: {
                     if self.isPlaying {
@@ -38,10 +41,11 @@ struct RadioPlayerView: View {
                         .foregroundStyle(Color.beige)
                 }
                 .padding()
+                 */
 
                 // Record image with spinning effect
                 ZStack {
-                    Image("Base") // Refer to the image by its name in the assets
+                    Image("Base") // The record player
                         .resizable()
                         .aspectRatio(contentMode: .fit)
                     Button(action: {
@@ -52,22 +56,27 @@ struct RadioPlayerView: View {
                             self.playRadio()
                             startSpinning()
                         }
-                        self.isPlaying.toggle()
+                        self.isPlaying.toggle() // Changes isPlaying to false if true, and true if false
                         
                     }) {
-                        Image("Record")
+                        Image("Record") // The record
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                             .rotationEffect(.degrees(rotationAngle)) // Rotate based on the rotationAngle state
-                            .animation(isPlaying ? Animation.linear(duration: rotationSpeed).repeatForever(autoreverses: false) : .default, value: rotationAngle) // Spin when playing, stop when paused
+                            .animation(isPlaying ? Animation.linear(duration: rotationSpeed).repeatForever(autoreverses: false) : Animation.easeIn(duration: rotationSpeed), value: rotationAngle) // Spin when playing, stop when paused
                         
                     }
                     
                 } // Close Record animation ZStack
                 
+                // Instructions text - TODO: Do this or do the play pause button?? Decide with Ross.
+                Text(isPlaying ? "Click on the Record to Pause" : "Click on the Record to Play")
+                    .font(.custom("Futura", size: 20))
+                    .foregroundStyle(Color.beige)
+                
                 // Status text
                 Text(isPlaying ? "Playing" : "Paused")
-                    .font(.title)
+                    .font(.custom("Futura", size: 50))
                     .padding()
                     .foregroundStyle(Color.beige)
             }
@@ -86,16 +95,18 @@ struct RadioPlayerView: View {
     }
 
     func startSpinning() {
-        // Set the rotation speed and update the rotation angle
-        rotationSpeed = 5 // Adjust the speed of the rotation
-        withAnimation {
-            rotationAngle += 360 // Add a full rotation
+        // Ensure the spinning happens at a constant rate using a timer
+        timer = Timer.scheduledTimer(withTimeInterval: 0.02, repeats: true) { _ in
+            withAnimation(Animation.linear(duration: 0.02)) {
+                rotationAngle += 2 // Increment angle continuously
+            }
         }
     }
 
     func stopSpinning() {
-        // When pausing, simply stop adjusting the rotation
-        rotationSpeed = 0 // Reset speed to stop rotation
+        // Stop the timer and the spinning effect
+        timer?.invalidate()
+        timer = nil
     }
 }
 
