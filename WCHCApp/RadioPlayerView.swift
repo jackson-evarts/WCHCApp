@@ -66,7 +66,7 @@ struct RadioPlayerView: View {
                 } // Close Record animation ZStack
                 
                 // Status text
-                Text(isPlaying ? "Now Playing" : "Paused")
+                Text(isPlaying ? "Playing" : "Paused")
                     .font(.title)
                     .padding()
                     .foregroundStyle(Color.beige)
