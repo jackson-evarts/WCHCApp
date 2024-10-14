@@ -42,22 +42,27 @@ struct ContentView: View {
                 VStack {
                     Spacer()
                     
-                    Image("LongLogo") // Refer to the image by its name in the assets
-                        .resizable()
-                        .aspectRatio(contentMode: .fit)
+                    
                     
                     NavigationLink(destination: RadioPlayerView()) {
+                        VStack {
+                            Image("LongLogo") // Refer to the image by its name in the assets
+                                .resizable()
+                                .aspectRatio(contentMode: .fit)
+                            
+                            Text("Listen Live")
+                                .font(.custom("Futura", size: 32))
+                                .foregroundColor(.beige)
+                                .padding()
+                                .background(
+                                    RoundedRectangle(cornerRadius: 10)
+                                        .fill(Color.darkPurple)
+                                        .frame(height: 50)
+                                )
+                        }
                         
-                        Text("Listen Live")
-                            .font(.custom("Futura", size: 32))
-                            .foregroundColor(.beige)
-                            .padding()
-                            .background(
-                                RoundedRectangle(cornerRadius: 10)
-                                    .fill(Color.darkPurple)
-                                    .frame(height: 50)
-                            )
                         
+                    
                     }
                     
                     Spacer()

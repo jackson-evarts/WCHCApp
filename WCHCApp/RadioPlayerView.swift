@@ -27,23 +27,7 @@ struct RadioPlayerView: View {
                 
                 Spacer()
                 
-                // Play/Pause button
-                Button(action: {
-                    if self.isPlaying {
-                        self.player?.pause()
-                        stopSpinning() // Stop the record spinning
-                    } else {
-                        self.playRadio()
-                        startSpinning() // Start the record spinning
-                    }
-                    self.isPlaying.toggle()
-                }) {
-                    Image(systemName: isPlaying ? "pause.circle.fill" : "play.circle.fill")
-                        .resizable()
-                        .frame(width: 100, height: 100)
-                        .foregroundStyle(Color.beige)
-                }
-                .padding()
+                
                  
                 
                 // Status Text
@@ -92,14 +76,40 @@ struct RadioPlayerView: View {
                     .foregroundStyle(Color.beige)
                  */
                 
-                Spacer()
-                Button(action: {
-                    refreshPlayer()
-                }) {
-                    Text("Click Here to Refresh Player")
-                        .font(.custom("Futura", size: 20))
-                        .foregroundStyle(Color.beige)
+                
+                HStack{
+                    // Play/Pause button
+                    Button(action: {
+                        if self.isPlaying {
+                            self.player?.pause()
+                            stopSpinning() // Stop the record spinning
+                        } else {
+                            self.playRadio()
+                            startSpinning() // Start the record spinning
+                        }
+                        self.isPlaying.toggle()
+                    }) {
+                        Image(systemName: isPlaying ? "pause.circle.fill" : "play.circle.fill")
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            .foregroundStyle(Color.beige)
+                    }
+                    .padding()
+                    
+                    Button(action: {
+                        refreshPlayer()
+                    }) {
+                        Image(systemName: "goforward")
+                            .resizable()
+                            .frame(width: 100, height: 100)
+                            .foregroundStyle(Color.beige)
+                    }
+                    
                 }
+                Spacer()
+
+                
+                
             }
             .onAppear {
                 // Setup AVPlayer when the view appears
@@ -107,11 +117,12 @@ struct RadioPlayerView: View {
                 
                 // Configure audio session for background playback
                 configureAudioSession()
-                
-                // Making it so radio is playing immediately upon entering view
-                //refreshPlayer()
-                // TODO: Uncomment this so the default state is PLAY
 
+                // Play radio upon opening view
+                playRadio()
+                startSpinning()
+                self.isPlaying = true
+            
             
             }
             .onDisappear {
