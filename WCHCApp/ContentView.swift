@@ -79,6 +79,9 @@ struct ContentView: View {
                             )
                         
                     }
+                    Text("Developed by J. Evarts '25")
+                        .font(.custom("Futura", size: 8))
+                        .foregroundColor(.beige)
                     
                 }
                 .padding()
